@@ -1,0 +1,89 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<!-- Change to your own main package name. -->
+	<groupId>me.lu2000luk</groupId>
+	
+	<!-- Change to your plugin name, must be lower cased and match your end package name. No spaces. -->
+	<artifactId>entityfix</artifactId>
+	
+	<!-- Change to your plugin's name. Can contain capital letters, but do NOT use spaces. -->
+	<name>EntityFix</name>
+	
+	<!-- Change to the appropriate plugin's version, starting at 1.0.0. -->
+	<version>1.0.0</version>
+	
+	<!-- DO NOT EDIT. -->
+	<packaging>jar</packaging>
+	
+	<properties>
+		
+		<!-- Change to your name or the main project author. -->
+		<author>lu2000luk</author>
+		
+		<!-- Change to the full path where your main plugin class is located. -->
+		<main.class>me.lu2000luk.EntityFix.EntityFix</main.class>
+		
+		<!-- The Java version this plugin is built on. Minecraft 1.18+ requires Java 17 or greater -->
+		<java.version>21</java.version>
+		
+		<!-- DO NOT EDIT. -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	
+	<repositories>
+		<!-- Repo to download Paper API from -->
+		<repository>
+			<id>papermc</id>
+			<url>https://repo.papermc.io/repository/maven-public/</url>
+		</repository>
+	</repositories>
+	
+	<dependencies>
+        <!-- Import Paper API to code your plugin with. See the link below for more 
+             https://github.com/PaperMC/Paper?tab=readme-ov-file#maven -->		
+		<dependency>
+			<groupId>io.papermc.paper</groupId>
+			<artifactId>paper-api</artifactId>
+			<version>1.20.4-R0.1-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+	
+	<!-- DO NOT EDIT unless instructed to do so or you know what you're doing. -->
+	<build>
+		<finalName>${project.name}-${project.version}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				
+				<!-- Change version to the latest one from
+					 https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-jar-plugin -->
+				<version>3.3.0</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				
+				<!-- Change version to the latest one from
+					 https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
+				<version>3.13.0</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+		
+		<!-- Replaces ${project.name} and other variables in src/main/resources. -->
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+	</build>
+</project>

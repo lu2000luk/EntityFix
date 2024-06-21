@@ -1,0 +1,13 @@
+#
+# This is the file your server opens to find the main class of your 
+# plugin and its information. We automatically replace variables here 
+# from your pom.xml file.
+#
+# See https://docs.papermc.io/paper/dev/plugin-ymlfor more information.
+# 
+name: ${project.name} 
+version: ${project.version}
+main: ${main.class}
+author: ${author}
+# DO NOT EDIT. This api-version is used for maximum backward compatibility.
+api-version: 1.13
